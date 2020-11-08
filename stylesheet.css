@@ -1,0 +1,105 @@
+    /* Created by Ferhat Sevim */
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-size: 35px;
+        text-align: center;
+        color: red;
+        font-family: 'Handlee', cursive;
+        background: radial-gradient(circle, yellow, white, pink);
+        background-size: 400px 500px;
+        background-position: center;
+    }
+    
+    .cube-face {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        height: 100vh;
+        transform-style: preserve-3d;
+        animation: up 5s infinite linear;
+        transition: width 10s linear;
+        opacity: 1;
+    }
+    
+    div:hover {
+        width: 100px;
+    }
+    
+    .cube-face div {
+        width: 800px;
+        height: 80px;
+        position: relative;
+    }
+    
+    .cube-face-front {
+        transform: translateX(25px);
+    }
+    
+    .baloon {
+        margin: -50px;
+        top: 10px;
+        right: 75px;
+        width: 100px;
+        height: 100px;
+        float: top;
+        position: absolute;
+        transform-style: preserve-3d;
+        animation: down 5s infinite linear;
+        transition: width 10s linear;
+        opacity: 0.7;
+    }
+    
+    @keyframes up {
+        from {
+            transform: translate(0px, 800px);
+            -webkit-transform: translate(0px, -100px);
+        }
+        to {
+            transform: translate(0px, 0px);
+            -webkit-transform: translate(0px, 500px);
+        }
+    }
+    
+    @keyframes down {
+        from {
+            transform: translate(500px, 500px);
+            -webkit-transform: translate(0px, 500px);
+        }
+        to {
+            transform: translate(0px, 0px);
+            -webkit-transform: translate(0px, -800px);
+        }
+    }
+    
+    .footer {
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        font-size: 25px;
+    }
+    
+    @media screen and (max-width: 770px) {
+        .footer {
+            font-size: 20px;
+        }
+        div:hover {
+            width: 100px;
+        }
+        .cube-face div {
+            left: 5px;
+            width: 300px;
+            height: 80px;
+            position: relative;
+        }
+        .cube-face-front {
+            font-size: 22px;
+        }
+        .baloon img {
+            size: 15px;
+        }
+    }
